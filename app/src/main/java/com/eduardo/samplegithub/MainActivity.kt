@@ -3,7 +3,12 @@ package com.eduardo.samplegithub
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -17,33 +22,26 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            SampleGithubTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    //Función a llamar
-                    Greeting("Android")
-                }
-            }
+            Nuevo()
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hola $name bienvenido!",
-        modifier = modifier,
-        fontSize = 50.sp
-    )
+fun Nuevo(){
+    Column {
+        Text(text = "Hola amigos")
+        Button(
+            onClick = { /*TODO*/ })
+        {
+            Icon(imageVector = Icons.Default.CheckCircle, contentDescription = "")
+            Text(text = "Iniciar")
+        }
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    SampleGithubTheme {
-        Greeting("Android")
-    }
+    Nuevo()
 }
